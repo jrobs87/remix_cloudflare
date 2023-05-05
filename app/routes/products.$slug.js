@@ -5,7 +5,7 @@ export const meta = () => {
 };
 
 export const loader = async ({params}) => {
-  const data = await fetch(`https://dev.buildgp.com/wp-json/wp/v2/product?slug=${params.slug}`)
+  const data = await fetch(`https://dev.buildgp.com/wp-json/wp/v2/product?slug=${params.slug}&_embed=benefits`)
   console.log('product', data)
   return data
 }
@@ -17,9 +17,9 @@ export default function Index() {
   
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Product: {data[0].title.rendered}</h1>
+      <h1>{data[0].title.rendered}</h1>
    
-      <pre>{JSON.stringify(data, null, 2) }</pre>
+      <pre>{JSON.stringify(data[0], null, 2) }</pre>
     </div>
   );
 }

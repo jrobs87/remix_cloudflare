@@ -1,0 +1,23 @@
+html {
+    background-color: #273043;
+    color: #EFF6EE;
+    padding: 2rem;
+    margin: 0;
+}
+
+a {
+    color: #E0E0CE;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a.active {
+    color: #F02D3A !important;
+}
+
+h1 {
+    color: #9197AE;
+}

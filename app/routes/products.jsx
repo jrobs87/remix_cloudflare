@@ -1,4 +1,4 @@
-import { useLoaderData, Outlet, Link } from "@remix-run/react";
+import { useLoaderData, Outlet, NavLink } from "@remix-run/react";
 
 export const meta = () => {
   return [{ title: "New Remix App" }];
@@ -10,29 +10,34 @@ export const loader = async () => {
   return data
 }
 
+const style = {
+  padding: "2rem", width: "20rem", overflow: "auto", border: "1px solid #9197AE", borderRadius: "0.25rem", flexGrow: 1
+}
+
 export default function Index() {
   const data = useLoaderData()
   console.log(data)
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
 
-      <div style={{ display: "flex" }}>
-        <div>
+      <div style={{ display: "flex", gap: "2rem" }}>
+
+        <div style={{ flexBasis: '40%', ...style}}>
           <h1 >Products</h1>
-          <ul style={{ width: "20rem", overflow: "hidden" }}>
+          <ul>
             {
               data.map((product) => {
                 return (
                   <li key={product.id}>
-                    <Link to={`/products/${product.slug}`} prefetch="render"> {product.title.rendered}</Link>
+                    <NavLink to={`/products/${product.slug}`} prefetch="render"> {product.title.rendered}</NavLink>
                   </li>
                 )
               })
             }
           </ul>
         </div>
-        <div style={{ width: "50rem" }}>
 
+        <div style={{ flexBasis: '60%', ...style}}>
           <Outlet />
         </div>
 

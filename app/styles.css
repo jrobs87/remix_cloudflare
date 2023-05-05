@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     background-color: #273043;
     color: #EFF6EE;
@@ -20,4 +24,10 @@ a.active {
 
 h1 {
     color: #9197AE;
+    height: 6rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }

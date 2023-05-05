@@ -17,7 +17,9 @@ const imgStyle = (url) => {
     width: "100%",
     backgroundSize: 'cover',
     backgroundRepeat: "no-repeat",
-    backgroundPosition: 'center'
+    backgroundPosition: 'center',
+    backgroundColor: 'black',
+    marginBottom: '1rem'
   }
 }
 
